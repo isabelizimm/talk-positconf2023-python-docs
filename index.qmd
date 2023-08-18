@@ -1,0 +1,30 @@
+---
+format: html
+---
+
+# outline
+
+- how i got started with quartodoc
+    - goldilocks syndrome
+    - makedocs's bed was too soft: felt nice, but unable to do the things to give user's the documentation you need (API documentation)
+    - sphinx's bed was too hard: not ergonomic, difficult to get going, feels like you have to be a sphinx developer to write sphinx docs, who even wants to write rst 😩
+    - quartodoc just right: builds API docs to put inside a quarto site
+- developer wins
+    - quick to get started
+    - built off quarto, extensible as packages grow and easy to use
+    - maintainable, literate config
+- user wins
+    - pkgdown is well loved in R community bc of its predictability & straightforward structure
+    - built in accessibility due to quarto build
+- walkthrough of config file
+- show sites made in quartodoc
+
+## other pieces
+
+- R vs. Python docs
+    - R has emphasis on longer form documentation (vignettes)
+    - Python often just API
+
+# impact/effect
+
+- empower developers to try out quartodoc -> make documentation better for pydata community
