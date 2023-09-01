@@ -1,36 +1,55 @@
 ---
-format: html
+format: revealjs
+title: thanks, i made it in quartodoc 🤍
+slide-number: true
 ---
 
-# outline
+# just a python developer, trying to make a docs site
 
-- how i got started with quartodoc
-    - goldilocks syndrome hospitality story
-    - makedocs's bed was too soft: felt nice, but unable to do the things to give user's the documentation you need (API documentation)
-    - sphinx's bed was too hard: not ergonomic, difficult to get going, feels like you have to be a sphinx developer to write sphinx docs, who even wants to write rst 😩
-    - quartodoc just right: builds API docs to put inside a quarto site
+::: notes
+and you really want 2 things in a docs site, api docs and long format documentation
+:::
+
+# api 
+
+# long format
+
+# makedocs 
+bed was too soft: felt nice, but unable to do the things to give user's the documentation you need (API documentation)
+
+# sphinx
+bed was too hard: feels like you have to be a sphinx developer to write sphinx docs, difficult to get going, who even wants to write rst 😩
+
+# quartodoc
+builds API docs to put inside a quarto site
+
+## vetiver
+
+## pins
+
+# developer wins
+
+## quick to get started
+
+## maintainable, literate config
+- feels like bullet points
+
+## built off quarto
+- extensible as packages grow
+- built with ergonomics in mind
+
+# user wins
+
+## predictable
+- pkgdown is well loved in R community bc of its predictability & straightforward structure
+- story of R -> Python
+
+## built in accessibility due to quarto build
+    
+## wasm elements
+- https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric
+
+# conclusion
+- hospitality story
 - made w <3 and quarto
-- show sites made in quartodoc
-- developer wins
-    - quick to get started, walkthrough of config file
-    - built off quarto, extensible as packages grow and easy to use
-    - maintainable, literate config
-        - bullet points
-- user wins
-    - pkgdown is well loved in R community bc of its predictability & straightforward structure
-        - story of R -> Python
-    - built in accessibility due to quarto build
-    - https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric
-- conclusion
-    - cta
 
-
-## other pieces
-
-- R vs. Python docs
-    - R has emphasis on longer form documentation (vignettes)
-    - Python often just API
-
-# impact/effect
-
-- empower developers to try out quartodoc -> make documentation better for pydata community
