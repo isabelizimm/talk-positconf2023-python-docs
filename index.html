@@ -8,7 +8,7 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.433">
+  <meta name="generator" content="quarto-1.4.349">
 
   <title>thanks, i made it in quartodoc 🤍</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,11 +28,77 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-codewindow/codewindow.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
@@ -155,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -318,6 +385,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -333,7 +403,11 @@
 <section id="just-a-python-developer-trying-to-make-a-docs-site" class="title-slide slide level1 center">
 <h1>just a python developer, trying to make a docs site</h1>
 <aside class="notes">
-<p>and you really want 2 things in a docs site, api docs and long format documentation</p>
+<p>there’s of course– many ways to talk about documentation. you can learn how to craft your words, how to</p>
+<p>but i am a software engineer by trade, so i like to think about documentation as a tooling problem. the R ecosytem has a well loved tool – pkgdown is a tool used to scaffold documentation, and it is massively loved in R community bc of its predictability &amp; straightforward structure. if youre in the R world, you might not even realize all the benefits you have</p>
+<p>users benefit from package down since there is a predictable structure: landing page, API reference, vignettes, read more. developers can make a packagedown site in literally less than 1 minute (and if you dont beleive me, you can watch jenny bryan’s talk later this afternoon).</p>
+<p>i have to say, in contrast to the well-engineered, straightforward choice in R, the python world feels like the wild west. i really struggled to find a tool that felt that felt just right to create documentation websites.</p>
+<p>in fact, i felt a bit like goldilocks…</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -347,41 +421,155 @@
       }</style></aside>
 </section>
 
-<section id="api" class="title-slide slide level1 center">
-<h1>api</h1>
-
+<section>
+<section id="the-goldilocks-zone-of-documentation" class="title-slide slide level1 center">
+<h1>the goldilocks zone of documentation</h1>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/goldi.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/3_bears.png"></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>if you’re not familiar with the tale, goldilocks is a children’s story of a young girl who is frolicking in the woods and finds a house where no one is home, walks in, and starts messing with the homeowners stuff. she is hungry and tries out 3 bowls of porridge that are set out on the table: the first one is scorching hot, the second is freezing cold, and the last is just right. she ends up falling asleep in a bed (after trying a napping spot that was too hard, and another that was too soft) and waking up to realizing it was bears that inhabited the home, but they allegedly live happily ever after.</p>
+<p>while goldilocks legally might have been breaking and entering, we’re going to view this tale with the child-like lens where goldilocks has entered a strange new place and is frustrated since she believes this world has been made for her, but she often feels frustrated and not at home.</p>
+<p>when i started making my first docs site, i felt this way: i knew i needed users to understand how to use my functions, but also when to use them.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
+<section id="long-format-docs" class="slide level2">
+<h2>long format docs</h2>
 
-<section id="long-format" class="title-slide slide level1 center">
-<h1>long format</h1>
-
+<img data-src="images/long-format.png" class="r-stretch"><aside class="notes">
+<p>way too much the r world has this down to a science, in fact, they have a name (vignettes)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
+<section id="long-format-docs-1" class="slide level2">
+<h2>long format docs</h2>
 
-<section id="makedocs" class="title-slide slide level1 center">
-<h1>makedocs</h1>
-<p>bed was too soft: felt nice, but unable to do the things to give user’s the documentation you need (API documentation)</p>
+<img data-src="images/long-format-2.png" class="r-stretch"><aside class="notes">
+<p>more storytelling, giving context</p>
+<p>title of the page is the problem youre trying to solve</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-
-<section id="sphinx" class="title-slide slide level1 center">
-<h1>sphinx</h1>
-<p>sphinx’s bed was too hard: feels like you have to be a sphinx developer to write sphinx docs, difficult to get going, who even wants to write rst 😩</p>
+<section id="makedocs" class="slide level2">
+<h2>makedocs</h2>
+<p><img data-src="images/mkdocs.png"> <img data-src="images/goldi.png" class="absolute" style="bottom: 0px; right: 50px; width: 100px; height: 100px; "></p>
+<aside class="notes">
+<p>bed was too soft: felt nice, but API documentation not out of box, clunky add on</p>
+<p>unable to do the things to give user’s the documentation you need (API documentation)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-
-<section id="quartodoc" class="title-slide slide level1 center">
-<h1>quartodoc</h1>
-<p>builds API docs to put inside a quarto site</p>
+<section id="api-docs" class="slide level2">
+<h2>api docs</h2>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/api-code.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="images/api-web.png"></p>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>not quite enough</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-
-<section id="vetiver" class="title-slide slide level1 center">
-<h1>vetiver</h1>
-
+<section id="sphinx" class="slide level2">
+<h2>sphinx</h2>
+<p>image of sphinx site, highlighting some things <img data-src="images/goldi.png" class="absolute" style="bottom: 0px; right: 50px; width: 100px; height: 100px; "></p>
+<aside class="notes">
+<p>bed was too hard: feels like you have to be a sphinx developer to write sphinx docs, difficult to get going, who even wants to write rst 😩</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
+<section id="quartodoc" class="slide level2">
+<h2>quartodoc</h2>
+<div id="12fc8b7c" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="1">
 
-<section id="pins" class="title-slide slide level1 center">
-<h1>pins</h1>
-
-</section>
-
+        <iframe width="1500" height="800" src="https://rstudio.github.io/vetiver-python/" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<p><img data-src="images/goldi.png" class="absolute" style="bottom: 0px; right: 50px; width: 100px; height: 100px; "></p>
+<aside class="notes">
+<p>builds API docs to put inside a quarto site generates API docs</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
 <section>
 <section id="developer-wins" class="title-slide slide level1 center">
 <h1>developer wins</h1>
@@ -389,19 +577,61 @@
 </section>
 <section id="quick-to-get-started" class="slide level2">
 <h2>quick to get started</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>pip install quartodoc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>quartodoc build</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>quartodoc preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
-<section id="maintainable-literate-config" class="slide level2">
-<h2>maintainable, literate config</h2>
-<ul>
-<li>feels like bullet points</li>
-</ul>
+<section id="literate-config" class="slide level2">
+<h2>literate config</h2>
+<div class="codewindow">
+<p>_quarto.yml</p>
+<div class="sourceCode" id="cb4" data-code-line-numbers="7-17"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<aside class="notes">
+<p>built to be quick to get started</p>
+<p>looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="built-off-quarto" class="slide level2">
 <h2>built off quarto</h2>
+<div>
 <ul>
-<li>extensible as packages grow</li>
-<li>built with ergonomics in mind</li>
+<li class="fragment">generates .qmd files as reference pages</li>
+<li class="fragment">extensible as packages grow</li>
+<li class="fragment">built with ergonomics in mind</li>
+<li class="fragment">accessibility built in</li>
 </ul>
+</div>
 </section></section>
 <section>
 <section id="user-wins" class="title-slide slide level1 center">
@@ -410,23 +640,44 @@
 </section>
 <section id="predictable" class="slide level2">
 <h2>predictable</h2>
+<div id="5eb1bf34" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="2">
+
+        <iframe width="1500" height="800" src="https://rstudio.github.io/pins-python/" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
+<aside class="notes">
 <ul>
-<li>pkgdown is well loved in R community bc of its predictability &amp; straightforward structure</li>
+<li>highlighted things</li>
 <li>story of R -&gt; Python</li>
 </ul>
-</section>
-<section id="built-in-accessibility-due-to-quarto-build" class="slide level2">
-<h2>built in accessibility due to quarto build</h2>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="wasm-elements" class="slide level2">
-<h2>wasm elements</h2>
-<ul>
-<li>https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric</li>
-</ul>
+<h2>WASM elements</h2>
+<div id="be2bd965" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="3">
+
+        <iframe width="1500" height="800" src="https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric" frameborder="0" allowfullscreen=""></iframe>
+        
+</div>
+</div>
 </section></section>
 <section id="conclusion" class="title-slide slide level1 center">
 <h1>conclusion</h1>
 <ul>
+<li>hospitality story</li>
 <li>made w &lt;3 and quarto</li>
 </ul>
 <div class="footer footer-default">
@@ -443,6 +694,7 @@
   <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
   <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-codewindow/codewindow.js"></script>
   <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
@@ -459,7 +711,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -635,7 +886,7 @@
         },
 
         // reveal.js plugins
-        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealCodewindow, QuartoSupport,
 
           RevealMath,
           RevealNotes,
@@ -720,10 +971,9 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -733,8 +983,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 

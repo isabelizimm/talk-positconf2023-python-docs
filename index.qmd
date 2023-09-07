@@ -2,54 +2,320 @@
 format: revealjs
 title: thanks, i made it in quartodoc 🤍
 slide-number: true
+revealjs-plugins:
+  - codewindow
 ---
 
 # just a python developer, trying to make a docs site
 
 ::: notes
-and you really want 2 things in a docs site, api docs and long format documentation
+there's of course-- many ways to talk about documentation. you can learn how to craft your words, how to 
+
+but i am a software engineer by trade, so i like to think about documentation as a tooling problem.
+the R ecosytem has a well loved tool -- pkgdown is a tool used to scaffold documentation, and it is massively loved in R community bc of its predictability & straightforward structure. if youre in the R world, you might not even realize all the benefits you have 
+
+users benefit from package down since there is a predictable structure: landing page, API reference, vignettes, read more. developers can make a packagedown site in literally less than 1 minute (and if you dont beleive me, you can watch jenny bryan's talk later this afternoon). 
+
+i have to say, in contrast to the well-engineered, straightforward choice in R, the python world feels like the wild west. i really struggled to find a tool that felt that felt just right to create documentation websites.
+
+in fact, i felt a bit like goldilocks...
 :::
 
-# api 
+# the goldilocks zone of documentation
 
-# long format
+::: {layout-ncol=2}
 
-# makedocs 
-bed was too soft: felt nice, but unable to do the things to give user's the documentation you need (API documentation)
+![](images/goldi.png)
 
-# sphinx
+![](images/3_bears.png)
+:::
+
+
+::: notes
+if you're not familiar with the tale, goldilocks is a children's story of a young girl who is frolicking in the woods and finds a house where no one is home, walks in, and starts messing with the homeowners stuff. she is hungry and tries out 3 bowls of porridge that are set out on the table: the first one is scorching hot, the second is freezing cold, and the last is just right. she ends up falling asleep in a bed (after trying a napping spot that was too hard, and another that was too soft) and waking up to realizing it was bears that inhabited the home, but they allegedly live happily ever after.
+
+while goldilocks legally might have been breaking and entering, we're going to view this tale with the child-like lens where goldilocks has entered a strange new place and is frustrated since she believes this world has been made for her, but she often feels frustrated and not at home.
+
+when i started making my first docs site, i felt this way: i knew i needed users to understand how to use my functions, but also when to use them.
+:::
+
+## long format docs
+
+![](images/long-format.png)
+
+::: notes
+way too much
+the r world has this down to a science, in fact, they have a name (vignettes)
+:::
+
+## long format docs
+
+![](images/long-format-2.png)
+
+::: notes
+more storytelling, giving context
+
+title of the page is the problem youre trying to solve
+::: 
+
+## makedocs 
+
+![](images/mkdocs.png)
+![](images/goldi.png){.absolute bottom=0 right=50 width="100" height="100"}
+
+::: notes
+bed was too soft: felt nice, but API documentation not out of box, clunky add on 
+
+unable to do the things to give user's the documentation you need (API documentation)
+:::
+
+## api docs
+
+::: {layout-ncol=2}
+
+![](images/api-code.png)
+
+![](images/api-web.png)
+:::
+
+::: notes
+not quite enough
+:::
+
+## sphinx
+
+image of sphinx site, highlighting some things
+![](images/goldi.png){.absolute bottom=0 right=50 width="100" height="100"}
+
+
+::: notes
 bed was too hard: feels like you have to be a sphinx developer to write sphinx docs, difficult to get going, who even wants to write rst 😩
+:::
 
-# quartodoc
+
+## quartodoc
+
+```{python}
+from IPython.display import IFrame
+IFrame('https://rstudio.github.io/vetiver-python/', width=1500, height=800)
+```
+
+![](images/goldi.png){.absolute bottom=0 right=50 width="100" height="100"}
+
+::: notes
 builds API docs to put inside a quarto site
-
-## vetiver
-
-## pins
+generates API docs
+:::
 
 # developer wins
 
 ## quick to get started
 
-## maintainable, literate config
-- feels like bullet points
+```bash
+pip install quartodoc
+```
+
+. . .
+
+```bash
+quartodoc build
+```
+
+. . .
+
+```bash
+quartodoc preview
+```
+
+## literate config  {auto-animate="true"}
+
+::: {.codewindow}
+_quarto.yml
+```{.yml code-line-numbers="5-17"}
+project:
+  type: website
+
+metadata-files:
+  - _sidebar.yml
+
+quartodoc:
+  title: Reference
+  sidebar: _sidebar.yml
+  package: goldilocks
+  sections:
+    - title: My golden functions
+      desc: These functions are just right!
+      contents:
+        - house_function
+        - Goldilocks.eat_porridge
+        - Goldilocks.take_nap
+```
+:::
+
+::: notes
+built to be quick to get started
+
+looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+:::
+
+## literate config  {auto-animate="true"}
+
+::: {.codewindow}
+_quarto.yml
+```{.yml code-line-numbers="7"}
+project:
+  type: website
+
+metadata-files:
+  - _sidebar.yml
+
+quartodoc:
+  title: Reference
+  sidebar: _sidebar.yml
+  package: goldilocks
+  sections:
+    - title: My golden functions
+      desc: These functions are just right!
+      contents:
+        - house_function
+        - Goldilocks.eat_porridge
+        - Goldilocks.take_nap
+```
+:::
+
+::: notes
+built to be quick to get started
+
+looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+:::
+
+## literate config  {auto-animate="true"}
+
+::: {.codewindow}
+_quarto.yml
+```{.yml code-line-numbers="5-7|9"}
+project:
+  type: website
+
+metadata-files:
+  - _sidebar.yml
+
+quartodoc:
+  title: Reference
+  sidebar: _sidebar.yml
+  package: goldilocks
+  sections:
+    - title: My golden functions
+      desc: These functions are just right!
+      contents:
+        - house_function
+        - Goldilocks.eat_porridge
+        - Goldilocks.take_nap
+```
+:::
+
+::: notes
+built to be quick to get started
+
+looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+:::
+
+## literate config {auto-animate="true"}
+
+::: {.codewindow}
+_quarto.yml
+```{.yml code-line-numbers="10"}
+project:
+  type: website
+
+metadata-files:
+  - _sidebar.yml
+
+quartodoc:
+  title: Reference
+  sidebar: _sidebar.yml
+  package: goldilocks
+  sections:
+    - title: My golden functions
+      desc: These functions are just right!
+      contents:
+        - house_function
+        - Goldilocks.eat_porridge
+        - Goldilocks.take_nap
+```
+:::
+
+::: notes
+built to be quick to get started
+
+looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+:::
+
+## literate config {auto-animate="true"}
+
+::: {.codewindow}
+_quarto.yml
+```{.yml code-line-numbers="11-17"}
+project:
+  type: website
+
+metadata-files:
+  - _sidebar.yml
+
+quartodoc:
+  title: Reference
+  sidebar: _sidebar.yml
+  package: goldilocks
+  sections:
+    - title: My golden functions
+      desc: These functions are just right!
+      contents:
+        - house_function
+        - Goldilocks.eat_porridge
+        - Goldilocks.take_nap
+```
+:::
+
+::: notes
+built to be quick to get started
+
+looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+:::
+
 
 ## built off quarto
+
+::: incremental
+- generates `.qmd` files as reference pages
 - extensible as packages grow
 - built with ergonomics in mind
+- accessibility built in
+:::
 
 # user wins
 
 ## predictable
-- pkgdown is well loved in R community bc of its predictability & straightforward structure
-- story of R -> Python
 
-## built in accessibility due to quarto build
-    
-## wasm elements
-- https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric
+```{python}
+from IPython.display import IFrame
+IFrame('https://rstudio.github.io/pins-python/', width=1500, height=800)
+```
+
+::: notes
+- highlighted things
+- story of R -> Python
+:::
+
+## WASM elements
+```{python}
+from IPython.display import IFrame
+IFrame('https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric',width=1500, height=800)
+```
 
 # conclusion
-- hospitality story
-- made w <3 and quarto
+_made w 🤍 and quarto_
+
+::: notes
+just the messenger for michael chow who has done all this amazing work
+:::
 
