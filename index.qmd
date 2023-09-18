@@ -1,50 +1,84 @@
 ---
 format: revealjs
-title: thanks, i made it in quartodoc 🤍
+title: thanks, i made it in quartodoc
+author: isabel zimmerman, posit pbc
 slide-number: true
 revealjs-plugins:
   - codewindow
 ---
 
-# just a python developer, trying to make a docs site
+# {background-image="images/intro.png"}
 
 ::: notes
-there's of course-- many ways to talk about documentation. you can learn how to craft your words, how to 
+there's of course-- many ways to talk about documentation. you can learn how to write accessible explanations to technical terms, how to build reproducible examples...
 
-but i am a software engineer by trade, so i like to think about documentation as a tooling problem.
+i am a open source software engineer at posit, and that role makes me think of everything...but especially documentation as a tooling problem.
 the R ecosytem has a well loved tool -- pkgdown is a tool used to scaffold documentation, and it is massively loved in R community bc of its predictability & straightforward structure. if youre in the R world, you might not even realize all the benefits you have 
 
-users benefit from package down since there is a predictable structure: landing page, API reference, vignettes, read more. developers can make a packagedown site in literally less than 1 minute (and if you dont beleive me, you can watch jenny bryan's talk later this afternoon). 
+users benefit from package down since there is a predictable structure: landing page, reference, articles, news, and maybe a getting started. developers can make a packagedown site in literally less than 1 minute (and if you dont beleive me, you can rewatch jenny bryan's talk from this afternoon on youtube). 
+:::
 
-i have to say, in contrast to the well-engineered, straightforward choice in R, the python world feels like the wild west. i really struggled to find a tool that felt that felt just right to create documentation websites.
+# {background-image="images/intro_oh_no.png"}
 
+::: notes
+i have to say, in contrast to the well-engineered, straightforward choice in R, the python world feels like the wild west. when i started building the package vetiver, i really struggled to find a tool that felt that felt just right to create documentation websites.
+:::
+
+# {background-image="images/goldidocs.png"}
+
+::: notes
 in fact, i felt a bit like goldilocks...
 :::
 
-# the goldilocks zone of documentation
-
-::: {layout-ncol=2}
-
-![](images/goldi.png)
-
-![](images/3_bears.png)
-:::
-
+# {background-image="images/house_woods.png"}
 
 ::: notes
-if you're not familiar with the tale, goldilocks is a children's story of a young girl who is frolicking in the woods and finds a house where no one is home, walks in, and starts messing with the homeowners stuff. she is hungry and tries out 3 bowls of porridge that are set out on the table: the first one is scorching hot, the second is freezing cold, and the last is just right. she ends up falling asleep in a bed (after trying a napping spot that was too hard, and another that was too soft) and waking up to realizing it was bears that inhabited the home, but they allegedly live happily ever after.
-
-while goldilocks legally might have been breaking and entering, we're going to view this tale with the child-like lens where goldilocks has entered a strange new place and is frustrated since she believes this world has been made for her, but she often feels frustrated and not at home.
-
-when i started making my first docs site, i felt this way: i knew i needed users to understand how to use my functions, but also when to use them.
+if you're not familiar with the tale, goldilocks is a children's story of a young girl who is lost in the woods and finds a house where no one is home, walks in, and starts messing with the homeowners stuff.
 :::
 
-## long format docs
-
-![](images/long-format.png)
+# {background-image="images/cold_porridge.png"}
 
 ::: notes
-way too much
+ she is hungry and tries out 3 bowls of porridge that are set out on the table: the first one is freezing cold
+:::
+
+# {background-image="images/hot_porridge.png"}
+
+::: notes
+the next is scorching hot,
+:::
+
+# {background-image="images/love_porridge.png"}
+
+::: notes
+and the last is just right
+:::
+
+# {background-image="images/love_bears.png"}
+
+::: notes
+she ends up messing around with a bunch of other stuff in this house and then some HOMEOWNING BEARS come in and she realizes it was bears that inhabited the home, but they ... 
+:::
+
+# {background-image="images/fear_bears.png"}
+
+::: notes
+allegedly live happily ever after.
+
+while goldilocks legally might have been breaking and entering, we're going to view this tale with the child-like lens where goldilocks has entered a strange new place and she believes this world has been made for her, but she often feels frustrated because **she knows what she wants**, but oftentimes nothing feels _just right_.
+
+when i started making my first docs site, i felt this frustration of knowing what i wanted in my docs-- i wanted a maintainable, markdown based documentation system that would give usesrs all the information they needed to be successful! but the tools at hand not feeling just right
+:::
+
+# long format docs
+
+::: r-fit-text
+..._when and why_ to run the code
+:::
+
+::: notes
+i knew i wanted long format documentation
+
 the r world has this down to a science, in fact, they have a name (vignettes)
 :::
 
@@ -53,59 +87,82 @@ the r world has this down to a science, in fact, they have a name (vignettes)
 ![](images/long-format-2.png)
 
 ::: notes
-more storytelling, giving context
-
-title of the page is the problem youre trying to solve
+and vignettes are great for a telling a story, giving context to a small workflow your package can help with! 
 ::: 
 
-## makedocs 
+## mkdocs 
 
-![](images/mkdocs.png)
-![](images/goldi.png){.absolute bottom=0 right=50 width="100" height="100"}
-
-::: notes
-bed was too soft: felt nice, but API documentation not out of box, clunky add on 
-
-unable to do the things to give user's the documentation you need (API documentation)
-:::
-
-## api docs
-
-::: {layout-ncol=2}
-
-![](images/api-code.png)
-
-![](images/api-web.png)
-:::
+{{mkdocs site image}}
+![](images/goldidocs_clear.png){.absolute bottom=0 right=50 height="100"}
 
 ::: notes
-not quite enough
+so i tried a tool built for long format documentation called mkdocs. it was great to get started, and i was able write in markdown, which was exactly what i wanted! but i realized, users cannot live on vignettes alone.... were fantastically prepared to know WHEN, but not HOW to use the vetiver package. they needed something else too--not just long format
+
+this documentation tool was not just right, it was way too much information for users
 :::
 
-## sphinx
+# function reference
 
-image of sphinx site, highlighting some things
-![](images/goldi.png){.absolute bottom=0 right=50 width="100" height="100"}
+::: r-fit-text
+..._how_ to run code
+:::
 
+## function reference
+
+![](images/docstring.png)
 
 ::: notes
-bed was too hard: feels like you have to be a sphinx developer to write sphinx docs, difficult to get going, who even wants to write rst 😩
+okay, so in python, when you write out source code for packages, you write something called a docstring. these are available so users can see in your code how to use your functions! 
+
+and theres special ways to format them-- you can see here i have indented stuff in a special way, done some special triple quotation marks, whatnot.
 :::
 
+## function reference
 
-## quartodoc
+![](images/sphinx_annotated_api.png)
 
-```{python}
+::: notes
+i knew there were tools out there that could progrmmatically export this information to a beautiful website page, called a function reference (or api documentation, referring to the fact it is documenting your packages API)
+
+and i found a tool for just this, called sphinx!!! it took my code, and spit out restructured text
+:::
+
+## function reference
+
+![](images/vetiver_sphinx_index.png)
+![](images/goldidocs_clear.png){.absolute bottom=0 right=50 height="250"}
+
+::: notes
+but in true goldilocks...maybe goldiDOCS fashion...this function reference alone was not just right-- API docs were not enough. while sphinx did allow for me to have what i needed for the generated website, i really wanted to have a markdown based site, not restructured text, and i didn't want to continue to wrangle all the extensions i had to add on to make the website i had. for this goldilocks and this project, sphinx was not enough.
+
+so my quest for the just right docs framework continued.
+:::
+
+## {background-image="images/goldidocs.png"}
+
+# quartodoc 🤎
+![](images/love_porridge.png){.absolute bottom=0 right=50 height="250"}
+
+## 
+
+![](images/quartodoc_annotated_api.png)
+![](images/goldidocs_clear.png){.absolute bottom=0 right=50 height="250"}
+
+::: notes
+i was able to get beautiful api docs
+:::
+
+## 
+
+![](images/vetiver_vignette.png)
+
+::: notes
+<!-- ```{python}
 from IPython.display import IFrame
-IFrame('https://rstudio.github.io/vetiver-python/', width=1500, height=800)
-```
-
-![](images/goldi.png){.absolute bottom=0 right=50 width="100" height="100"}
-
-::: notes
-builds API docs to put inside a quarto site
-generates API docs
+IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', width=1500, height=800)
+``` -->
 :::
+
 
 # developer wins
 
@@ -117,21 +174,20 @@ pip install quartodoc
 
 . . .
 
-```bash
-quartodoc build
-```
+(little bit of configuration)
 
 . . .
 
 ```bash
+quartodoc build
 quartodoc preview
 ```
 
-## literate config  {auto-animate="true"}
+## little bit of configuration  {auto-animate="true"}
 
 ::: {.codewindow}
 _quarto.yml
-```{.yml code-line-numbers="5-17"}
+```{.yml code-line-numbers="4-17"}
 project:
   type: website
 
@@ -158,7 +214,7 @@ built to be quick to get started
 looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
 :::
 
-## literate config  {auto-animate="true"}
+## little bit of configuration  {auto-animate="true"}
 
 ::: {.codewindow}
 _quarto.yml
@@ -184,16 +240,14 @@ quartodoc:
 :::
 
 ::: notes
-built to be quick to get started
-
-looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+start with a yaml chunk that is quartodoc specific
 :::
 
-## literate config  {auto-animate="true"}
+## little bit of configuration  {auto-animate="true"}
 
 ::: {.codewindow}
 _quarto.yml
-```{.yml code-line-numbers="5-7|9"}
+```{.yml code-line-numbers="4-5|9"}
 project:
   type: website
 
@@ -215,12 +269,10 @@ quartodoc:
 :::
 
 ::: notes
-built to be quick to get started
-
-looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+tell quartodoc that you would like it to create a sidebar (quartodoc will output this in a file called _sidebar.yml, you won't ever have to touch it if you dont want)
 :::
 
-## literate config {auto-animate="true"}
+## little bit of configuration {auto-animate="true"}
 
 ::: {.codewindow}
 _quarto.yml
@@ -246,16 +298,14 @@ quartodoc:
 :::
 
 ::: notes
-built to be quick to get started
-
-looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+package you would like to document (it must be installed)
 :::
 
-## literate config {auto-animate="true"}
+## little bit of configuration {auto-animate="true"}
 
 ::: {.codewindow}
 _quarto.yml
-```{.yml code-line-numbers="11-17"}
+```{.yml code-line-numbers="11-13"}
 project:
   type: website
 
@@ -277,45 +327,113 @@ quartodoc:
 :::
 
 ::: notes
-built to be quick to get started
-
-looks and feels like a bullet point list of what you want on your website, this literate layout is maintainable
+generate an index page, which will be a scrollable list of functions, separating 
 :::
 
+## little bit of configuration {auto-animate="true"}
 
-## built off quarto
+::: {.codewindow}
+_quarto.yml
+```{.yml code-line-numbers="14-17"}
+project:
+  type: website
+
+metadata-files:
+  - _sidebar.yml
+
+quartodoc:
+  title: Reference
+  sidebar: _sidebar.yml
+  package: goldilocks
+  sections:
+    - title: My golden functions
+      desc: These functions are just right!
+      contents:
+        - house_function
+        - Goldilocks.eat_porridge
+        - Goldilocks.take_nap
+```
+:::
+
+::: notes
+add in what you would like to document
+
+if you add a class, all the methods and attributes are autodocumented on each page, but you can also split it out like i did for Goldilocks class here
+:::
+
+## little bit of configuration
+
+![](images/vetiver_index.png)
+
+::: notes
+these 17 lines of configuration will generate a site that will include this reference page
+
+<!-- ```{python}
+from IPython.display import IFrame
+IFrame('https://rstudio.github.io/vetiver-python/stable/reference/', width=1500, height=800)
+``` -->
+:::
+
+## website built with quarto
 
 ::: incremental
 - generates `.qmd` files as reference pages
-- extensible as packages grow
-- built with ergonomics in mind
 - accessibility built in
+- extensible as packages grow
+:::
+
+::: notes
+able to write in markdown
+
+quarto able to grow from 1 page to large sites
+
+comes with high contrast highlighting, accessible sizing, and easily customizable alt text for images etc
+:::
+
+## extensibility
+
+![](images/ibis.png)
+
+::: notes
+and to really highlight extensibility--a project called ibis just moved from mkdocs to quartodoc, you can see here they've added some custom code formatting and really fun table highlighting. this was something they developed inside of quartodoc to be able to customize their docs to be JUST RIGHT for them!
 :::
 
 # user wins
 
+
+
 ## predictable
 
-```{python}
-from IPython.display import IFrame
-IFrame('https://rstudio.github.io/pins-python/', width=1500, height=800)
-```
+![](images/pins.png)
 
 ::: notes
 - highlighted things
 - story of R -> Python
+
+quartodoc starts users off with an outline that makes things easy to find, allowing developers to worry about content, not how to set up their site
+<!-- ```{python}
+from IPython.display import IFrame
+IFrame('https://rstudio.github.io/pins-python/', width=1500, height=800)
+``` -->
+
 :::
 
 ## WASM elements
-```{python}
-from IPython.display import IFrame
-IFrame('https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric',width=1500, height=800)
-```
 
-# conclusion
-_made w 🤍 and quarto_
+![](images/shiny.gif)
 
 ::: notes
-just the messenger for michael chow who has done all this amazing work
+<!-- ```{python}
+from IPython.display import IFrame
+IFrame('https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric',width=1500, height=800)
+``` -->
 :::
 
+
+# {background-image="images/love_porridge.png"}
+
+::: notes
+i have been a delighted user of quartodoc. i have to say a heartfelt thank you michael chow from the quarto team at posit who has done all this amazing work to make my life easier i was the first user of quartodoc and worked closely with michael to get the vetiver site up and running. 
+
+goldilocks, in our lens, is a hospitality story-- where goldilocks was lost, she found a home in quartodoc that felt just right.
+:::
