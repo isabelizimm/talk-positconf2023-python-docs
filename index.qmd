@@ -80,19 +80,12 @@ when i started making my first docs site, i felt this frustration of knowing wha
 i knew i wanted long format documentation
 
 the r world has this down to a science, in fact, they have a name (vignettes)
-:::
-
-## long format docs
-
-![](images/long-format-2.png)
-
-::: notes
 and vignettes are great for a telling a story, giving context to a small workflow your package can help with! 
 ::: 
 
 ## mkdocs 
 
-{{mkdocs site image}}
+![](images/long-format-2.png)
 ![](images/goldidocs_clear.png){.absolute bottom=0 right=50 height="100"}
 
 ::: notes
@@ -247,7 +240,7 @@ start with a yaml chunk that is quartodoc specific
 
 ::: {.codewindow}
 _quarto.yml
-```{.yml code-line-numbers="4-5|9"}
+```{.yml code-line-numbers="4-5,9"}
 project:
   type: website
 
