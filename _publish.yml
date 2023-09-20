@@ -1,0 +1,4 @@
+- source: index.qmd
+  quarto-pub:
+    - id: 4e4dc83f-71bf-43db-a99e-09bf83147342
+      url: 'https://isabel.quarto.pub/thanks-i-made-it-in-quartodoc'

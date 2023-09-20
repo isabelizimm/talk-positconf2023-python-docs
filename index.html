@@ -407,8 +407,8 @@ isabel zimmerman, posit pbc
 <h1></h1>
 <aside class="notes">
 <p>there’s of course– many ways to talk about documentation. you can learn how to write accessible explanations to technical terms, how to build reproducible examples…</p>
-<p>i am a open source software engineer at posit, and that role makes me think of everything…but especially documentation as a tooling problem. the R ecosytem has a well loved tool – pkgdown is a tool used to scaffold documentation, and it is massively loved in R community bc of its predictability &amp; straightforward structure. if youre in the R world, you might not even realize all the benefits you have</p>
-<p>users benefit from package down since there is a predictable structure: landing page, reference, articles, news, and maybe a getting started. developers can make a packagedown site in literally less than 1 minute (and if you dont beleive me, you can rewatch jenny bryan’s talk from this afternoon on youtube).</p>
+<p>i am a open source software engineer at posit, and that role makes me think of everything as a tooling problem, and docs is no exception. the R ecosytem has a well loved tool – pkgdown is a tool used to scaffold documentation, and it is massively loved in R community bc of its predictability &amp; straightforward structure. if youre in the R world, you might not even realize all the benefits you have</p>
+<p>users benefit from package down since there is a predictable structure: landing page, reference, articles, news, and maybe a getting started. developers can make a packagedown site in about 1 minute (jenny bryan said this is possible, and i believe it was confirmed in an earlier talk that we can, in fact, trust jenny bryan).</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -546,7 +546,8 @@ isabel zimmerman, posit pbc
 <aside class="notes">
 <p>allegedly live happily ever after.</p>
 <p>while goldilocks legally might have been breaking and entering, we’re going to view this tale with the child-like lens where goldilocks has entered a strange new place and she believes this world has been made for her, but she often feels frustrated because <strong>she knows what she wants</strong>, but oftentimes nothing feels <em>just right</em>.</p>
-<p>when i started making my first docs site, i felt this frustration of knowing what i wanted in my docs– i wanted a maintainable, markdown based documentation system that would give usesrs all the information they needed to be successful! but the tools at hand not feeling just right</p>
+<p>when i started making my first docs site, i felt this frustration of knowing what i wanted in my docs– i wanted a maintainable, markdown based documentation system that would give usesrs all the information they needed to be successful! and, if we’re talking about docs utopia…ideally, this tool would be super easy to use, have minimal other extensions necessary, and just overall allow me to spend more time on the content of the site rather than fiddling with all these settings</p>
+<p>but the tools at hand not feeling just right</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -581,9 +582,9 @@ isabel zimmerman, posit pbc
           display:block!important;
       }</style></aside>
 </section>
-<section id="mkdocs" class="slide level2">
-<h2>mkdocs</h2>
-<p><img data-src="images/long-format-2.png"> <img data-src="images/goldidocs_clear.png" class="absolute" style="bottom: 0px; right: 50px; height: 100px; "></p>
+<section id="long-format-docs-1" class="slide level2">
+<h2>long format docs</h2>
+<p><img data-src="images/long-format-2.png"> <img data-src="images/goldidocs_clear.png" class="absolute" style="bottom: 0px; right: 50px; height: 250px; "></p>
 <aside class="notes">
 <p>so i tried a tool built for long format documentation called mkdocs. it was great to get started, and i was able write in markdown, which was exactly what i wanted! but i realized, users cannot live on vignettes alone…. were fantastically prepared to know WHEN, but not HOW to use the vetiver package. they needed something else too–not just long format</p>
 <p>this documentation tool was not just right, it was way too much information for users</p>
@@ -629,6 +630,7 @@ isabel zimmerman, posit pbc
 
 <img data-src="images/sphinx_annotated_api.png" class="r-stretch"><aside class="notes">
 <p>i knew there were tools out there that could progrmmatically export this information to a beautiful website page, called a function reference (or api documentation, referring to the fact it is documenting your packages API)</p>
+<p>i have the function name up top, a function signature, you can see this bulleted point list of parameters, and if you scroll down theres examples and such</p>
 <p>and i found a tool for just this, called sphinx!!! it took my code, and spit out restructured text</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -666,11 +668,26 @@ isabel zimmerman, posit pbc
 <section>
 <section id="quartodoc" class="title-slide slide level1 center">
 <h1>quartodoc 🤎</h1>
-<p><img data-src="images/love_porridge.png" class="absolute" style="bottom: 0px; right: 50px; height: 250px; "></p>
+
+<img data-src="images/love_porridge.png" class="r-stretch"><aside class="notes">
+<p>one of my colleagues, michael chow, who works on the quarto team, tuned me into a project he was working on.</p>
+<p>quartodoc is a python package that generates a function reference page for your quarto website.</p>
+<p>quarto is a publishing framework…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="section-10" class="slide level2">
-<h2></h2>
-<p><img data-src="images/quartodoc_annotated_api.png"> <img data-src="images/goldidocs_clear.png" class="absolute" style="bottom: 0px; right: 50px; height: 250px; "></p>
+<section id="quartodoc-1" class="slide level2">
+<h2>quartodoc 🤎</h2>
+<p><img data-src="images/quartodoc_annotated_api.png"> <img data-src="images/love_porridge_clear.png" class="absolute" style="bottom: 0px; right: 50px; height: 250px; "></p>
 <aside class="notes">
 <p>i was able to get beautiful api docs</p>
 <style type="text/css">
@@ -685,14 +702,28 @@ isabel zimmerman, posit pbc
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-11" class="slide level2">
+<section id="section-10" class="slide level2">
 <h2></h2>
 
-<img data-src="images/vetiver_vignette.png" class="r-stretch"><aside class="notes">
-<!-- ```{python}
-from IPython.display import IFrame
-IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', width=1500, height=800)
-``` -->
+<img data-src="images/fx_ref.png" class="r-stretch"><aside class="notes">
+<p>and in the quartodoc world, i have a lot of sphinx similarities–a few differences is that, out of the box, i get my parameters as a table rather than a bulleted list, with columns such as type and default</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="quartodoc-2" class="slide level2">
+<h2>quartodoc 🤎</h2>
+<p><img data-src="images/vetiver_vignette.png"> <img data-src="images/love_porridge_clear.png" class="absolute" style="bottom: 0px; right: 50px; height: 250px; "></p>
+<aside class="notes">
+<p>and i was able to leverage the markdown native format of quarto, which was built for writing technical documentation</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -721,27 +752,27 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', wi
 <span id="cb2-2"><a href="#cb2-2"></a><span class="ex">quartodoc</span> preview</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="little-bit-of-configuration" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">little bit of configuration</h2>
+<section id="little-bit-of-configuration" class="slide level2">
+<h2>little bit of configuration</h2>
 <div class="codewindow">
 <p>_quarto.yml</p>
-<div class="sourceCode" id="cb3" data-code-line-numbers="4-17"><pre class="sourceCode numberSource yml number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode yaml hljs"><span id="cb3-1" class="hljs-ln-code"><a href="#cb3-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb3-2" class="hljs-ln-code"><a href="#cb3-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb3-3" class="hljs-ln-code"><a href="#cb3-3"></a></span>
-<span id="cb3-4" class="hljs-ln-code"><a href="#cb3-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
-<span id="cb3-5" class="hljs-ln-code"><a href="#cb3-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb3-6" class="hljs-ln-code"><a href="#cb3-6"></a></span>
-<span id="cb3-7" class="hljs-ln-code"><a href="#cb3-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
-<span id="cb3-8" class="hljs-ln-code"><a href="#cb3-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
-<span id="cb3-9" class="hljs-ln-code"><a href="#cb3-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb3-10" class="hljs-ln-code"><a href="#cb3-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
-<span id="cb3-11" class="hljs-ln-code"><a href="#cb3-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
-<span id="cb3-12" class="hljs-ln-code"><a href="#cb3-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
-<span id="cb3-13" class="hljs-ln-code"><a href="#cb3-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
-<span id="cb3-14" class="hljs-ln-code"><a href="#cb3-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb3-15" class="hljs-ln-code"><a href="#cb3-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
-<span id="cb3-16" class="hljs-ln-code"><a href="#cb3-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
-<span id="cb3-17" class="hljs-ln-code"><a href="#cb3-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3" data-code-line-numbers="4-17"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>built to be quick to get started</p>
@@ -758,27 +789,27 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', wi
           display:block!important;
       }</style></aside>
 </section>
-<section id="little-bit-of-configuration-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">little bit of configuration</h2>
+<section id="little-bit-of-configuration-1" class="slide level2">
+<h2>little bit of configuration</h2>
 <div class="codewindow">
 <p>_quarto.yml</p>
-<div class="sourceCode" id="cb4" data-code-line-numbers="7"><pre class="sourceCode numberSource yml number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode yaml hljs"><span id="cb4-1" class="hljs-ln-code"><a href="#cb4-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb4-2" class="hljs-ln-code"><a href="#cb4-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb4-3" class="hljs-ln-code"><a href="#cb4-3"></a></span>
-<span id="cb4-4" class="hljs-ln-code"><a href="#cb4-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
-<span id="cb4-5" class="hljs-ln-code"><a href="#cb4-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb4-6" class="hljs-ln-code"><a href="#cb4-6"></a></span>
-<span id="cb4-7" class="hljs-ln-code"><a href="#cb4-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
-<span id="cb4-8" class="hljs-ln-code"><a href="#cb4-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
-<span id="cb4-9" class="hljs-ln-code"><a href="#cb4-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb4-10" class="hljs-ln-code"><a href="#cb4-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
-<span id="cb4-11" class="hljs-ln-code"><a href="#cb4-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
-<span id="cb4-12" class="hljs-ln-code"><a href="#cb4-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
-<span id="cb4-13" class="hljs-ln-code"><a href="#cb4-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
-<span id="cb4-14" class="hljs-ln-code"><a href="#cb4-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb4-15" class="hljs-ln-code"><a href="#cb4-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
-<span id="cb4-16" class="hljs-ln-code"><a href="#cb4-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
-<span id="cb4-17" class="hljs-ln-code"><a href="#cb4-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4" data-code-line-numbers="7"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>start with a yaml chunk that is quartodoc specific</p>
@@ -794,27 +825,27 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', wi
           display:block!important;
       }</style></aside>
 </section>
-<section id="little-bit-of-configuration-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">little bit of configuration</h2>
+<section id="little-bit-of-configuration-2" class="slide level2">
+<h2>little bit of configuration</h2>
 <div class="codewindow">
 <p>_quarto.yml</p>
-<div class="sourceCode" id="cb5" data-code-line-numbers="4-5,9"><pre class="sourceCode numberSource yml number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode yaml hljs"><span id="cb5-1" class="hljs-ln-code"><a href="#cb5-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb5-2" class="hljs-ln-code"><a href="#cb5-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb5-3" class="hljs-ln-code"><a href="#cb5-3"></a></span>
-<span id="cb5-4" class="hljs-ln-code"><a href="#cb5-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
-<span id="cb5-5" class="hljs-ln-code"><a href="#cb5-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb5-6" class="hljs-ln-code"><a href="#cb5-6"></a></span>
-<span id="cb5-7" class="hljs-ln-code"><a href="#cb5-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
-<span id="cb5-8" class="hljs-ln-code"><a href="#cb5-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
-<span id="cb5-9" class="hljs-ln-code"><a href="#cb5-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb5-10" class="hljs-ln-code"><a href="#cb5-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
-<span id="cb5-11" class="hljs-ln-code"><a href="#cb5-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
-<span id="cb5-12" class="hljs-ln-code"><a href="#cb5-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
-<span id="cb5-13" class="hljs-ln-code"><a href="#cb5-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
-<span id="cb5-14" class="hljs-ln-code"><a href="#cb5-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb5-15" class="hljs-ln-code"><a href="#cb5-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
-<span id="cb5-16" class="hljs-ln-code"><a href="#cb5-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
-<span id="cb5-17" class="hljs-ln-code"><a href="#cb5-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-code-line-numbers="4-5,9"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>tell quartodoc that you would like it to create a sidebar (quartodoc will output this in a file called _sidebar.yml, you won’t ever have to touch it if you dont want)</p>
@@ -830,27 +861,27 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', wi
           display:block!important;
       }</style></aside>
 </section>
-<section id="little-bit-of-configuration-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">little bit of configuration</h2>
+<section id="little-bit-of-configuration-3" class="slide level2">
+<h2>little bit of configuration</h2>
 <div class="codewindow">
 <p>_quarto.yml</p>
-<div class="sourceCode" id="cb6" data-code-line-numbers="10"><pre class="sourceCode numberSource yml number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode yaml hljs"><span id="cb6-1" class="hljs-ln-code"><a href="#cb6-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb6-2" class="hljs-ln-code"><a href="#cb6-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb6-3" class="hljs-ln-code"><a href="#cb6-3"></a></span>
-<span id="cb6-4" class="hljs-ln-code"><a href="#cb6-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
-<span id="cb6-5" class="hljs-ln-code"><a href="#cb6-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb6-6" class="hljs-ln-code"><a href="#cb6-6"></a></span>
-<span id="cb6-7" class="hljs-ln-code"><a href="#cb6-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
-<span id="cb6-8" class="hljs-ln-code"><a href="#cb6-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
-<span id="cb6-9" class="hljs-ln-code"><a href="#cb6-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb6-10" class="hljs-ln-code"><a href="#cb6-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
-<span id="cb6-11" class="hljs-ln-code"><a href="#cb6-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
-<span id="cb6-12" class="hljs-ln-code"><a href="#cb6-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
-<span id="cb6-13" class="hljs-ln-code"><a href="#cb6-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
-<span id="cb6-14" class="hljs-ln-code"><a href="#cb6-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb6-15" class="hljs-ln-code"><a href="#cb6-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
-<span id="cb6-16" class="hljs-ln-code"><a href="#cb6-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
-<span id="cb6-17" class="hljs-ln-code"><a href="#cb6-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6" data-code-line-numbers="10"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>package you would like to document (it must be installed)</p>
@@ -866,27 +897,27 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', wi
           display:block!important;
       }</style></aside>
 </section>
-<section id="little-bit-of-configuration-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">little bit of configuration</h2>
+<section id="little-bit-of-configuration-4" class="slide level2">
+<h2>little bit of configuration</h2>
 <div class="codewindow">
 <p>_quarto.yml</p>
-<div class="sourceCode" id="cb7" data-code-line-numbers="11-13"><pre class="sourceCode numberSource yml number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode yaml hljs"><span id="cb7-1" class="hljs-ln-code"><a href="#cb7-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb7-2" class="hljs-ln-code"><a href="#cb7-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb7-3" class="hljs-ln-code"><a href="#cb7-3"></a></span>
-<span id="cb7-4" class="hljs-ln-code"><a href="#cb7-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
-<span id="cb7-5" class="hljs-ln-code"><a href="#cb7-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb7-6" class="hljs-ln-code"><a href="#cb7-6"></a></span>
-<span id="cb7-7" class="hljs-ln-code"><a href="#cb7-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
-<span id="cb7-8" class="hljs-ln-code"><a href="#cb7-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
-<span id="cb7-9" class="hljs-ln-code"><a href="#cb7-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb7-10" class="hljs-ln-code"><a href="#cb7-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
-<span id="cb7-11" class="hljs-ln-code"><a href="#cb7-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
-<span id="cb7-12" class="hljs-ln-code"><a href="#cb7-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
-<span id="cb7-13" class="hljs-ln-code"><a href="#cb7-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
-<span id="cb7-14" class="hljs-ln-code"><a href="#cb7-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb7-15" class="hljs-ln-code"><a href="#cb7-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
-<span id="cb7-16" class="hljs-ln-code"><a href="#cb7-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
-<span id="cb7-17" class="hljs-ln-code"><a href="#cb7-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7" data-code-line-numbers="11-13"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>generate an index page, which will be a scrollable list of functions, separating</p>
@@ -902,27 +933,27 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', wi
           display:block!important;
       }</style></aside>
 </section>
-<section id="little-bit-of-configuration-5" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">little bit of configuration</h2>
+<section id="little-bit-of-configuration-5" class="slide level2">
+<h2>little bit of configuration</h2>
 <div class="codewindow">
 <p>_quarto.yml</p>
-<div class="sourceCode" id="cb8" data-code-line-numbers="14-17"><pre class="sourceCode numberSource yml number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode yaml hljs"><span id="cb8-1" class="hljs-ln-code"><a href="#cb8-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb8-2" class="hljs-ln-code"><a href="#cb8-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
-<span id="cb8-3" class="hljs-ln-code"><a href="#cb8-3"></a></span>
-<span id="cb8-4" class="hljs-ln-code"><a href="#cb8-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
-<span id="cb8-5" class="hljs-ln-code"><a href="#cb8-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb8-6" class="hljs-ln-code"><a href="#cb8-6"></a></span>
-<span id="cb8-7" class="hljs-ln-code"><a href="#cb8-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
-<span id="cb8-8" class="hljs-ln-code"><a href="#cb8-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
-<span id="cb8-9" class="hljs-ln-code"><a href="#cb8-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
-<span id="cb8-10" class="hljs-ln-code"><a href="#cb8-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
-<span id="cb8-11" class="hljs-ln-code"><a href="#cb8-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
-<span id="cb8-12" class="hljs-ln-code"><a href="#cb8-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
-<span id="cb8-13" class="hljs-ln-code"><a href="#cb8-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
-<span id="cb8-14" class="hljs-ln-code"><a href="#cb8-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
-<span id="cb8-15" class="hljs-ln-code"><a href="#cb8-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
-<span id="cb8-16" class="hljs-ln-code"><a href="#cb8-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
-<span id="cb8-17" class="hljs-ln-code"><a href="#cb8-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8" data-code-line-numbers="14-17"><pre class="sourceCode numberSource yml number-lines code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> website</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="fu">metadata-files</span><span class="kw">:</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="at">  </span><span class="kw">-</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="fu">quartodoc</span><span class="kw">:</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="at">  </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Reference</span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="at">  </span><span class="fu">sidebar</span><span class="kw">:</span><span class="at"> _sidebar.yml</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a><span class="at">  </span><span class="fu">package</span><span class="kw">:</span><span class="at"> goldilocks</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="at">  </span><span class="fu">sections</span><span class="kw">:</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a><span class="at">    </span><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> My golden functions</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="at">      </span><span class="fu">desc</span><span class="kw">:</span><span class="at"> These functions are just right!</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="at">      </span><span class="fu">contents</span><span class="kw">:</span></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="at">        </span><span class="kw">-</span><span class="at"> house_function</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.eat_porridge</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a><span class="at">        </span><span class="kw">-</span><span class="at"> Goldilocks.take_nap</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <aside class="notes">
 <p>add in what you would like to document</p>
@@ -944,10 +975,6 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/custom_handler.html', wi
 
 <img data-src="images/vetiver_index.png" class="r-stretch"><aside class="notes">
 <p>these 17 lines of configuration will generate a site that will include this reference page</p>
-<!-- ```{python}
-from IPython.display import IFrame
-IFrame('https://rstudio.github.io/vetiver-python/stable/reference/', width=1500, height=800)
-``` -->
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -971,8 +998,8 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/reference/', width=1500,
 </div>
 <aside class="notes">
 <p>able to write in markdown</p>
-<p>quarto able to grow from 1 page to large sites</p>
 <p>comes with high contrast highlighting, accessible sizing, and easily customizable alt text for images etc</p>
+<p>quarto able to grow from 1 page to large sites…vetiver is a pretty simple website… but</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -989,7 +1016,8 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/reference/', width=1500,
 <h2>extensibility</h2>
 
 <img data-src="images/ibis.png" class="r-stretch"><aside class="notes">
-<p>and to really highlight extensibility–a project called ibis just moved from mkdocs to quartodoc, you can see here they’ve added some custom code formatting and really fun table highlighting. this was something they developed inside of quartodoc to be able to customize their docs to be JUST RIGHT for them!</p>
+<p>and to really highlight extensibility–a python data science package called ibis just moved their documentation to quartodoc, you can see here they’ve added some custom code formatting and really fun table highlighting to make the table colors match the code highlighting</p>
+<p>this was something they developed inside of quartodoc to be able to customize their docs to be JUST RIGHT for them!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1015,10 +1043,7 @@ IFrame('https://rstudio.github.io/vetiver-python/stable/reference/', width=1500,
 <li>highlighted things</li>
 <li>story of R -&gt; Python</li>
 </ul>
-<p>quartodoc starts users off with an outline that makes things easy to find, allowing developers to worry about content, not how to set up their site <!-- ```{python}
-from IPython.display import IFrame
-IFrame('https://rstudio.github.io/pins-python/', width=1500, height=800)
-``` --></p>
+<p>quartodoc leans on the lessons learned from packagedown and starts users off with a simple site outline built to make things easy to find, allowing developers to worry about content, not how to set up their site</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1035,10 +1060,7 @@ IFrame('https://rstudio.github.io/pins-python/', width=1500, height=800)
 <h2>WASM elements</h2>
 
 <img data-src="images/shiny.gif" class="r-stretch"><aside class="notes">
-<!-- ```{python}
-from IPython.display import IFrame
-IFrame('https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_numeric',width=1500, height=800)
-``` -->
+<p>and if you’d like to make even MORE complex documentation, the shiny docs</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1050,11 +1072,14 @@ IFrame('https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_num
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section></section>
-<section id="section-12" class="title-slide slide level1 center" data-background-image="images/love_porridge.png">
-<h1></h1>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<p>thank you to michael chow for quartodoc (and emil hvitfeldt for the slide help!)</p>
+
+<img data-src="images/love_porridge.png" class="r-stretch"><p>questions @ pos.it/slido-cd</p>
 <aside class="notes">
-<p>i have been a delighted user of quartodoc. i have to say a heartfelt thank you michael chow from the quarto team at posit who has done all this amazing work to make my life easier i was the first user of quartodoc and worked closely with michael to get the vetiver site up and running.</p>
+<p>i have been a delighted user of quartodoc. i have to say a heartfelt thank you michael chow from the quarto team at posit who has done all this amazing work to make my life easier.</p>
 <p>goldilocks, in our lens, is a hospitality story– where goldilocks was lost, she found a home in quartodoc that felt just right.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -1068,9 +1093,9 @@ IFrame('https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_num
           display:block!important;
       }</style></aside>
 <div class="footer footer-default">
-
+<p>isabel.quarto.pub/thanks-i-made-it-in-quartodoc</p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -1248,9 +1273,9 @@ IFrame('https://shiny.posit.co/py/api/ui.update_numeric.html#shiny.ui.update_num
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1050,
+        width: 1600,
 
-        height: 700,
+        height: 900,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,
